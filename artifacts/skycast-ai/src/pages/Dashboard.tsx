@@ -13,6 +13,7 @@ import { AIInsights } from "../components/weather/AIInsights";
 import { WeatherCharts } from "../components/weather/WeatherCharts";
 import { WorldWeather } from "../components/weather/WorldWeather";
 import { SettingsPanel } from "../components/weather/SettingsPanel";
+import { WeatherComparison } from "../components/weather/WeatherComparison";
 import { useWeather } from "../hooks/useWeather";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
@@ -108,6 +109,16 @@ export default function Dashboard() {
                 <motion.div key="news" variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="space-y-6">
                   <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground to-muted-foreground">Weather Intelligence News</h2>
                   <WeatherNews />
+                </motion.div>
+              )}
+
+              {activeSection === "compare" && (
+                <motion.div key="compare" variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="space-y-6">
+                  <div>
+                    <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground to-muted-foreground">Compare Cities</h2>
+                    <p className="text-muted-foreground mt-1">Side-by-side weather intelligence across any two cities</p>
+                  </div>
+                  <WeatherComparison unit={unit} />
                 </motion.div>
               )}
 
