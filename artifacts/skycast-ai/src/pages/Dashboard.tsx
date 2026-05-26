@@ -14,6 +14,7 @@ import { WeatherCharts } from "../components/weather/WeatherCharts";
 import { WorldWeather } from "../components/weather/WorldWeather";
 import { SettingsPanel } from "../components/weather/SettingsPanel";
 import { WeatherComparison } from "../components/weather/WeatherComparison";
+import { MumbaiZoneMonitor } from "../components/weather/MumbaiZoneMonitor";
 import { useWeather } from "../hooks/useWeather";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
@@ -119,6 +120,12 @@ export default function Dashboard() {
                     <p className="text-muted-foreground mt-1">Side-by-side weather intelligence across any two cities</p>
                   </div>
                   <WeatherComparison unit={unit} />
+                </motion.div>
+              )}
+
+              {activeSection === "mumbai" && (
+                <motion.div key="mumbai" variants={containerVariants} initial="hidden" animate="visible" exit="exit">
+                  <MumbaiZoneMonitor unit={unit} />
                 </motion.div>
               )}
 

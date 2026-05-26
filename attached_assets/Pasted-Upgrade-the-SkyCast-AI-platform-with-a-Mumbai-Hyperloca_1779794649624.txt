@@ -1,0 +1,119 @@
+Upgrade the SkyCast AI platform with a Mumbai Hyperlocal Weather Intelligence System.
+
+Add a premium section called:
+
+“Mumbai Live Zone Monitor”
+
+This section must display live weather + AQI + forecasts for major Mumbai regions and suburban zones.
+
+Requirements:
+
+1. MUMBAI ZONES GRID
+   Create beautiful animated cards for all major Mumbai areas including:
+
+* Mulund
+* Bhandup
+* Nahur
+* Powai
+* Ghatkopar
+* Kurla
+* Sion
+* Dadar
+* Parel
+* Byculla
+* Matunga
+* Wadala
+* Chembur
+* Andheri
+* Bandra
+* Santacruz
+* Goregaon
+* Malad
+* Borivali
+* Thane
+* Navi Mumbai
+* Vashi
+* Nerul
+* Panvel
+
+2. EACH CARD SHOULD SHOW:
+
+* Live temperature
+* Weather condition
+* AQI level
+* Humidity
+* Wind speed
+* Feels-like temperature
+* Mini forecast
+* Animated weather icon
+* Live updating timestamp
+
+3. UI FEATURES
+
+* Glassmorphism cards
+* Hover glow animations
+* Dynamic gradients based on weather
+* Neon borders
+* Responsive grid layout
+* Floating particles
+* Smooth transitions
+* Expandable cards on click
+
+4. INTERACTIVE MAP
+
+* Add Mumbai map with clickable regions
+* Clicking a zone updates dashboard weather
+* Animated location pins
+* AQI heat zones
+* Rain overlay
+* Live radar simulation
+
+5. LIVE DATA
+   Use OpenWeatherMap API for each area.
+
+API KEY:
+NEXT_PUBLIC_WEATHER_API_KEY=f7732744fa0c6785549e491b064eb55a
+
+6. SMART FEATURES
+
+* Show hottest area in Mumbai
+* Show coolest area
+* Show best AQI zone
+* Show worst AQI zone
+* Add “Traffic Weather Risk” badge
+* Add flood-risk alerts during rain
+
+7. AI INSIGHTS
+   Create AI-generated summaries like:
+
+* “Mulund currently has the cleanest air”
+* “Heavy humidity detected in Dadar”
+* “Kurla experiencing high pollution”
+* “Pleasant weather in Bandra tonight”
+
+8. PREMIUM EXPERIENCE
+
+* Smooth animated transitions
+* Futuristic dashboard appearance
+* Real-time updates
+* Weather pulse animations
+* Mobile optimized
+* Fast loading
+* No runtime errors
+
+9. OPTIONAL FALLBACK
+   If API fails for any region:
+
+* show realistic dummy data
+* maintain UI layout without breaking
+
+10. EXTRA WOW FEATURES
+
+* Mumbai local train weather status
+* Monsoon tracker
+* Rain probability heatmap
+* AQI trend chart
+* Area comparison mode
+* “Best place to go today” AI recommendation
+
+The final UI should feel like a futuristic Mumbai smart-city weather command center.

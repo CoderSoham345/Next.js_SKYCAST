@@ -7,11 +7,12 @@ import {
   Newspaper, 
   Settings,
   CloudLightning,
-  GitCompareArrows
+  GitCompareArrows,
+  Building2
 } from "lucide-react";
 import { motion } from "framer-motion";
 
-export type Section = "dashboard" | "forecast" | "aqi" | "map" | "alerts" | "news" | "compare" | "settings";
+export type Section = "dashboard" | "forecast" | "aqi" | "map" | "alerts" | "news" | "compare" | "mumbai" | "settings";
 
 interface SidebarProps {
   activeSection: Section;
@@ -27,6 +28,7 @@ export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
     { id: "alerts", label: "Alerts", icon: <AlertTriangle size={20} /> },
     { id: "news", label: "Weather News", icon: <Newspaper size={20} /> },
     { id: "compare", label: "Compare Cities", icon: <GitCompareArrows size={20} /> },
+    { id: "mumbai", label: "Mumbai Live Zone", icon: <Building2 size={20} /> },
     { id: "settings", label: "Settings", icon: <Settings size={20} /> },
   ];
 
