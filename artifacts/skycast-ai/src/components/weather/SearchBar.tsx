@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Search, MapPin, Mic, Command } from "lucide-react";
+import { Search, MapPin, Mic, Command, Loader2 } from "lucide-react";
 import { searchCities } from "../../lib/weatherApi";
 import { City } from "../../types/weather";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,6 +13,8 @@ export function SearchBar({ onSearch }: SearchBarProps) {
   const [results, setResults] = useState<City[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [recent, setRecent] = useState<string[]>([]);
+  const [locationLoading, setLocationLoading] = useState(false);
+  const [locationError, setLocationError] = useState("");
   const wrapperRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -54,6 +56,40 @@ export function SearchBar({ onSearch }: SearchBarProps) {
     const newRecent = [cityName, ...recent.filter(c => c !== cityName)].slice(0, 5);
     setRecent(newRecent);
     localStorage.setItem("recentSearches", JSON.stringify(newRecent));
+  };
+
+  const handleCurrentLocation = () => {
+    if (!navigator.geolocation) {
+      setLocationError("Geolocation is not supported");
+      return;
+    }
+    
+    setLocationLoading(true);
+    setLocationError("");
+    
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        try {
+          const { latitude, longitude } = position.coords;
+          const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
+          const res = await fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${apiKey}`);
+          const data = await res.json();
+          if (data && data.length > 0) {
+            handleSelect(data[0].name);
+          } else {
+            setLocationError("City not found");
+          }
+        } catch (error) {
+          setLocationError("Failed to fetch location");
+        } finally {
+          setLocationLoading(false);
+        }
+      },
+      () => {
+        setLocationError("Location access denied");
+        setLocationLoading(false);
+      }
+    );
   };
 
   return (
@@ -128,9 +164,17 @@ export function SearchBar({ onSearch }: SearchBarProps) {
                 </div>
                 
                 <div className="px-3 pt-2 pb-1 border-t border-border/40 mt-1">
-                  <button className="w-full flex items-center justify-center gap-2 text-xs text-primary hover:text-primary-foreground py-2 rounded bg-primary/10 hover:bg-primary/20 transition-colors">
-                    <MapPin size={14} /> Use Current Location
+                  <button 
+                    onClick={handleCurrentLocation}
+                    disabled={locationLoading}
+                    className="w-full flex items-center justify-center gap-2 text-xs text-primary hover:text-primary-foreground py-2 rounded bg-primary/10 hover:bg-primary/20 transition-colors disabled:opacity-50"
+                  >
+                    {locationLoading ? <Loader2 size={14} className="animate-spin" /> : <MapPin size={14} />} 
+                    Use Current Location
                   </button>
+                  {locationError && (
+                    <p className="text-[10px] text-red-500 text-center mt-1">{locationError}</p>
+                  )}
                 </div>
               </div>
             )}

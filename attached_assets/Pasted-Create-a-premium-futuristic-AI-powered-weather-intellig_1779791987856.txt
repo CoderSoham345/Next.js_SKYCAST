@@ -1,0 +1,165 @@
+Create a premium futuristic AI-powered weather intelligence platform called “SkyCast AI”.
+
+The application must look ultra-modern, cinematic, animated, and production-ready like Apple + Tesla + Linear + Vercel inspired UI.
+
+Tech Stack:
+
+* Next.js 14
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* Recharts
+* Leaflet.js
+* OpenWeatherMap API
+* NewsAPI integration
+* Responsive mobile-first design
+
+Use this OpenWeatherMap API key throughout the project:
+NEXT_PUBLIC_WEATHER_API_KEY=f7732744fa0c6785549e491b064eb55a
+
+Main Requirements:
+
+1. HERO SECTION
+
+* Full animated gradient background
+* Weather particles animation (rain, snow, clouds, thunder, stars)
+* Glassmorphism search bar
+* AI greeting based on current time
+* Typing animation text
+* Smooth hover transitions
+* Floating CTA buttons
+
+2. LIVE LOCATION FEATURE
+
+* Fully working geolocation support
+* Auto-detect current city
+* Show live temperature instantly
+* Handle permission denied errors gracefully
+* Loading animation while fetching location
+* Real-time weather updates from location
+
+3. INTERACTIVE WEATHER MAP
+
+* Use Leaflet.js
+* Add live weather radar overlay
+* Add cloud/rain/wind/temperature layers
+* Map should zoom smoothly
+* Add animated markers
+* Clicking any city on map should update dashboard weather
+* Show popup weather cards on marker click
+* Add dark futuristic map theme
+
+4. WEATHER DASHBOARD
+
+* Current weather card
+* 7-day forecast
+* Hourly forecast slider
+* Sunrise/sunset timings
+* Wind speed
+* Humidity
+* Pressure
+* Visibility
+* UV index
+* Feels like temperature
+* Animated gauges and charts
+
+5. AQI SECTION
+
+* Premium AQI gauge meter
+* Color-coded air quality system
+* Health recommendations
+* Animated progress rings
+* Pollutant breakdown cards
+
+6. NEWS SECTION
+
+* Create fully working weather/news panel
+* Use NewsAPI or dummy fallback data
+* Show:
+
+  * climate news
+  * cyclone alerts
+  * rain warnings
+  * environmental updates
+  * heatwave alerts
+* News cards should animate on hover
+* Add “Read More” buttons
+* Add breaking news ticker at top
+* Auto refresh news every few minutes
+
+7. AI INSIGHTS PANEL
+
+* Generate dynamic weather recommendations
+* Examples:
+
+  * “Carry umbrella today”
+  * “High UV detected”
+  * “Air quality unhealthy”
+* Add typewriter animation
+* Add futuristic AI assistant card
+
+8. SETTINGS PANEL
+
+* Dark/light mode
+* Temperature unit toggle
+* Wind speed unit toggle
+* Theme customization
+* Notification settings
+* Save preferences in localStorage
+
+9. PREMIUM UI FEATURES
+
+* Smooth page transitions
+* Skeleton loading animations
+* Animated cards
+* Neon glow effects
+* Glassmorphism panels
+* Responsive sidebar
+* Mobile navigation drawer
+* Hover lift animations
+* Smooth scrolling
+* Dynamic weather backgrounds based on conditions
+
+10. SAFETY & ERROR HANDLING
+
+* No runtime errors
+* No undefined errors
+* Add fallback states everywhere
+* Add loading states everywhere
+* Handle API failures gracefully
+* Use optional chaining and safe rendering
+* Avoid hydration issues
+* Make deployment-ready production code
+
+11. PERFORMANCE
+
+* Optimize all animations
+* Lazy load heavy sections
+* Use dynamic imports where needed
+* Mobile optimized
+* SEO friendly
+
+12. DEPLOYMENT
+
+* Ensure application runs successfully on:
+
+  * Vercel
+  * Replit
+  * Bolt
+  * Netlify
+* Include proper environment variable usage
+* Add clean project structure
+
+13. EXTRA WOW FEATURES
+
+* Animated weather radar
+* Floating weather orb
+* AI generated weather summaries
+* City quick-select pills
+* Weather comparison mode
+* Animated statistics counters
+* Interactive charts
+* Live digital clock
+* Ambient sound toggle
+
+The final app must feel like a premium startup product and should be visually stunning enough for internships, portfolio showcases, hackathons, and LinkedIn presentations.

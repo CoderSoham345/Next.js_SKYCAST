@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Droplets, Wind, Eye, Sun, Navigation, Sunrise, Sunset } from "lucide-react";
+import { Droplets, Wind, Eye, Sun, Sunrise, Sunset } from "lucide-react";
 import { CurrentWeather as CurrentWeatherType } from "../../types/weather";
 import { getWeatherIcon, convertTemp, formatTime } from "../../lib/weatherUtils";
+import { LiveClock } from "./LiveClock";
 
 interface CurrentWeatherProps {
   data: CurrentWeatherType | null;
@@ -25,16 +26,23 @@ export function CurrentWeather({ data, unit }: CurrentWeatherProps) {
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="flex flex-col justify-between">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
-              {data.name}, {data.sys.country}
-            </h2>
-            <p className="text-muted-foreground font-medium">
-              {new Date(data.dt * 1000).toLocaleDateString("en-US", {
-                weekday: "long",
-                month: "long",
-                day: "numeric",
-              })}
-            </p>
+            <div className="flex justify-between items-start">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
+                  {data.name}, {data.sys.country}
+                </h2>
+                <div className="flex items-center gap-4">
+                  <p className="text-muted-foreground font-medium">
+                    {new Date(data.dt * 1000).toLocaleDateString("en-US", {
+                      weekday: "long",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </p>
+                  <LiveClock timezone={data.timezone} />
+                </div>
+              </div>
+            </div>
           </div>
           
           <div className="mt-8 flex items-end gap-6">
