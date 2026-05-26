@@ -18,3 +18,24 @@ expertMode = true
 [postMerge]
 path = "scripts/post-merge.sh"
 timeoutMs = 20000
+
+[[ports]]
+localPort = 8080
+externalPort = 8080
+
+[[ports]]
+localPort = 8081
+externalPort = 80
+
+[[ports]]
+localPort = 19988
+externalPort = 3000
+
+[[ports]]
+localPort = 19999
+externalPort = 3001
+
+[userenv]
+
+[userenv.shared]
+VITE_WEATHER_API_KEY = "f7732744fa0c6785549e491b064eb55a"

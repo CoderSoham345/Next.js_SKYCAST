@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "SkyCast AI"
+version = "1.0.0"
+id = "artifacts/skycast-ai"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19988
+
+[services.development]
+run = "pnpm --filter @workspace/skycast-ai run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/skycast-ai", "run", "build" ]
+publicDir = "artifacts/skycast-ai/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19988"
+BASE_PATH = "/"

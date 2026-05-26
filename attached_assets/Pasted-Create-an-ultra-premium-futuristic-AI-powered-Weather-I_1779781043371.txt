@@ -1,0 +1,394 @@
+Create an ultra-premium futuristic AI-powered Weather Intelligence Platform called “SkyCast AI”.
+
+The application must be FULLY FUNCTIONAL, visually stunning, animated, responsive, production-ready, and built like a real-world startup SaaS product.
+
+====================================================
+
+TECH STACK
+
+Use:
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Recharts
+- Leaflet.js or Mapbox
+- OpenWeatherMap API
+- NewsAPI
+- Lucide React Icons
+
+Use premium UI patterns inspired by:
+- Apple Weather
+- Tesla Dashboard
+- Linear.app
+- Vercel
+- Stripe
+- Awwwards websites
+
+====================================================
+
+API KEYS
+
+Use this weather API key everywhere:
+
+NEXT_PUBLIC_WEATHER_API_KEY = f7732744fa0c6785549e491b064eb55a
+
+Integrate:
+- Current Weather API
+- 5 Day Forecast API
+- AQI API
+- Geolocation Weather API
+
+Also integrate:
+- Weather News API
+- Climate Headlines API
+
+====================================================
+
+MAIN REQUIREMENTS
+
+The site should NOT look like a template.
+It should feel like:
+- futuristic AI operating system
+- premium startup dashboard
+- animated weather intelligence platform
+
+Everything must work properly.
+
+====================================================
+
+HERO SECTION
+
+Create:
+- animated weather background
+- moving gradients
+- floating particles
+- glassmorphism UI
+- animated clouds
+- rain/snow/sun effects depending on weather
+
+Add:
+- huge premium heading
+- animated typing effect
+- CTA buttons
+- glowing hover effects
+- smooth transitions
+
+Typing text examples:
+- “Real-Time Weather Intelligence”
+- “Predict. Analyze. Explore.”
+- “AI-Powered Climate Insights”
+
+====================================================
+
+SMART SEARCH SYSTEM
+
+Build advanced weather search.
+
+Features:
+- search any city worldwide
+- auto-complete suggestions
+- recent searches
+- trending locations
+- animated dropdown
+- voice search button
+- location tracking
+- current location detection
+
+When user searches:
+- full weather dashboard should update dynamically
+- no page reload
+- smooth animated transitions
+
+====================================================
+
+FULL WEATHER DASHBOARD
+
+Show:
+
+CURRENT WEATHER
+- city name
+- country
+- live date/time
+- weather icon
+- temperature
+- feels like
+- humidity
+- wind speed
+- pressure
+- visibility
+- cloud percentage
+- sunrise/sunset
+- UV index
+
+Use premium animated weather cards.
+
+====================================================
+
+MULTI-REGION WEATHER SYSTEM
+
+Create selectable regions/cards for:
+- Asia
+- Europe
+- North America
+- South America
+- Africa
+- Australia
+
+When clicking region:
+- show top cities weather
+- update charts dynamically
+- animate dashboard transition
+
+Add world weather overview section.
+
+====================================================
+
+HOURLY FORECAST SECTION
+
+Create:
+- horizontally scrollable premium cards
+- animated timeline
+- weather icons
+- rain probability
+- temperature graph
+
+Must feel interactive and modern.
+
+====================================================
+
+7-DAY FORECAST
+
+Create:
+- beautiful forecast cards
+- dynamic weather backgrounds
+- hover animations
+- expandable forecast details
+
+====================================================
+
+AQI / AIR QUALITY
+
+Integrate AQI API.
+
+Create:
+- animated AQI meter
+- health indicator
+- pollution chart
+- color-coded risk levels
+- health recommendations
+
+====================================================
+
+LIVE WEATHER NEWS
+
+Create dedicated weather news section.
+
+Fetch:
+- climate news
+- storm alerts
+- floods
+- heatwaves
+- rainfall warnings
+- weather disasters
+
+Features:
+- animated scrolling ticker
+- expandable popup news modal
+- breaking news badge
+- category filters
+- trending weather news
+
+====================================================
+
+WEATHER ALERT SYSTEM
+
+Create alert cards for:
+- thunderstorms
+- floods
+- heatwaves
+- storms
+- hurricanes
+
+Show:
+- severity level
+- animated pulse effect
+- alert banners
+
+====================================================
+
+INTERACTIVE WEATHER MAP
+
+Build live map section.
+
+Features:
+- radar overlay
+- rain overlay
+- cloud overlay
+- weather markers
+- zoom controls
+- animated map transitions
+
+====================================================
+
+AI WEATHER INSIGHTS
+
+Create AI assistant panel.
+
+Generate intelligent insights:
+- “Good weather for outdoor activities”
+- “Rain expected within next 2 hours”
+- “Poor air quality detected”
+- “Carry an umbrella today”
+
+Animate insights like AI assistant.
+
+====================================================
+
+ADVANCED CHARTS
+
+Build:
+- temperature chart
+- rainfall chart
+- humidity chart
+- AQI graph
+- wind trend chart
+
+Use:
+- Recharts
+
+Animate charts beautifully.
+
+====================================================
+
+ANIMATIONS
+
+Use Framer Motion heavily.
+
+Include:
+- hover animations
+- glowing effects
+- floating cards
+- stagger animations
+- smooth transitions
+- parallax effects
+- animated gradients
+- blur glass effects
+- loading shimmer
+- premium micro-interactions
+
+====================================================
+
+PREMIUM SIDEBAR
+
+Create futuristic sidebar with:
+- Dashboard
+- Forecast
+- Air Quality
+- Weather Map
+- Alerts
+- News
+- Settings
+
+Use:
+- glowing active state
+- smooth transitions
+- animated icons
+
+====================================================
+
+PREMIUM NAVBAR
+
+Create:
+- floating transparent navbar
+- animated logo
+- profile button
+- weather status badge
+- live temperature
+- dark/light toggle
+
+====================================================
+
+SETTINGS PANEL
+
+Add:
+- temperature unit switch
+- theme switch
+- notification toggle
+- region preference
+- language selection
+
+====================================================
+
+DUMMY DATA REQUIREMENT
+
+If APIs fail:
+- show realistic fallback dummy data
+- different temperatures for each region
+- realistic AQI values
+- realistic weather conditions
+- realistic news cards
+
+Never leave blank sections.
+
+====================================================
+
+LOADING EXPERIENCE
+
+Create:
+- premium loading screen
+- skeleton cards
+- shimmer effects
+- animated loaders
+- smooth transitions
+
+====================================================
+
+ERROR HANDLING
+
+Ensure:
+- no runtime errors
+- no missing imports
+- no hydration issues
+- safe API handling
+- fallback UI everywhere
+- production-safe code
+
+====================================================
+
+RESPONSIVE DESIGN
+
+Site must look AMAZING on:
+- desktop
+- mobile
+- tablet
+
+Use:
+- responsive grids
+- premium mobile navigation
+- touch-friendly interactions
+
+====================================================
+
+DEPLOYMENT READY
+
+Ensure:
+- clean folder structure
+- optimized performance
+- GitHub-ready
+- Vercel-ready
+- environment variable support
+- SEO optimized
+- accessible UI
+
+====================================================
+
+FINAL EXPERIENCE
+
+The final result should feel like:
+- a billion-dollar AI weather startup
+- futuristic weather operating system
+- cinematic animated dashboard
+- award-winning Awwwards website
+
+The application should be COMPLETE, polished, premium, animated, responsive, API-connected, and fully functional with professional-grade UI/UX.
