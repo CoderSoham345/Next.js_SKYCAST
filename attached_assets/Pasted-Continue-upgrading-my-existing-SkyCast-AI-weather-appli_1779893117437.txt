@@ -1,0 +1,295 @@
+Continue upgrading my existing SkyCast AI weather application.
+
+DO NOT rebuild from scratch.
+Enhance the existing project professionally while keeping all current features working.
+
+Make the platform usable for ALL major cities and regions across India.
+
+========================
+MAIN GOAL
+========================
+
+Build a futuristic AI-powered Indian Weather Intelligence Platform with:
+- live weather,
+- AQI,
+- forecasts,
+- interactive maps,
+- alerts,
+- analytics,
+- news,
+- beautiful premium UI.
+
+The website should feel like:
+Apple Weather + Windy + Tesla Dashboard + futuristic AI interface.
+
+========================
+1. INDIA-WIDE WEATHER COVERAGE
+========================
+
+Support all major Indian cities dynamically.
+
+Include:
+Mumbai,
+Delhi,
+Bangalore,
+Chennai,
+Kolkata,
+Hyderabad,
+Pune,
+Ahmedabad,
+Jaipur,
+Lucknow,
+Surat,
+Nagpur,
+Patna,
+Indore,
+Bhopal,
+Kanpur,
+Nashik,
+Thane,
+Visakhapatnam,
+Coimbatore,
+Kochi,
+Goa,
+Shimla,
+Srinagar,
+Varanasi,
+and more.
+
+The search should work for ANY Indian city.
+
+========================
+2. SMART CITY WEATHER CARDS
+========================
+
+Create responsive compact weather cards.
+
+Each card should show:
+- live temperature
+- AQI in 3-digit format (042, 118, 267)
+- humidity
+- wind speed
+- feels-like temperature
+- sunrise/sunset
+- weather icon
+- animated AQI badge
+- weather condition
+
+Use:
+green/yellow/orange/red AQI colors.
+
+NO huge empty white spaces.
+
+Create:
+- dense premium dashboard
+- compact grids
+- modern spacing
+- responsive layouts
+
+========================
+3. STATE + REGION VIEW
+========================
+
+When user clicks a city:
+show nearby regions/subareas automatically.
+
+Example:
+Mumbai →
+Dadar,
+Kurla,
+Mulund,
+Powai,
+Andheri,
+Bandra,
+Navi Mumbai,
+Thane.
+
+Delhi →
+Rohini,
+Dwarka,
+Noida,
+Gurgaon.
+
+Bangalore →
+Whitefield,
+Electronic City,
+Indiranagar.
+
+etc.
+
+Each region card should show:
+temperature,
+AQI,
+humidity,
+weather condition.
+
+========================
+4. INTERACTIVE INDIA WEATHER MAP
+========================
+
+Add Leaflet or Mapbox map.
+
+Features:
+- markers across India
+- live weather markers
+- AQI heatmap
+- weather overlays
+- rain/cloud radar layers
+- animated popups
+
+Popup should show:
+city,
+temperature,
+AQI,
+humidity,
+wind,
+weather condition,
+timestamp.
+
+Add smooth animations and zoom effects.
+
+========================
+5. LIVE LOCATION DETECTION
+========================
+
+Fix live location feature fully.
+
+Requirements:
+- auto-detect user location
+- smooth permission handling
+- animated loading state
+- auto-load nearby weather
+- show nearest cities
+
+========================
+6. AI WEATHER NEWS & ALERTS
+========================
+
+Create animated news section.
+
+Show:
+- cyclone alerts
+- flood warnings
+- heatwave alerts
+- AQI warnings
+- rainfall warnings
+- IMD-style notifications
+
+Add:
+- breaking news ticker
+- animated alert cards
+- auto-refresh news
+
+========================
+7. ADVANCED ANALYTICS
+========================
+
+Add:
+- hourly forecast charts
+- 7-day forecasts
+- AQI trend graphs
+- humidity charts
+- temperature comparison charts
+- wind analytics
+
+Use:
+Recharts or Chart.js.
+
+========================
+8. PREMIUM FUTURISTIC UI
+========================
+
+Use:
+- glassmorphism
+- neon gradients
+- dynamic weather backgrounds
+- Framer Motion animations
+- smooth hover effects
+- animated cards
+- glowing buttons
+- futuristic typography
+- responsive sidebar
+- animated hero section
+
+Weather backgrounds should dynamically change:
+- rain
+- thunderstorm
+- sunny
+- clouds
+- night
+- fog
+
+========================
+9. SMART FEATURES
+========================
+
+Add:
+- search autocomplete
+- favorite cities
+- recent searches
+- Celsius/Fahrenheit toggle
+- dark/light mode
+- AI weather insights
+- best time to travel suggestions
+
+========================
+10. PERFORMANCE & STABILITY
+========================
+
+Very important:
+- no runtime errors
+- no broken imports
+- no blank screens
+- no excessive white spaces
+- responsive on mobile/tablet/desktop
+- loading skeletons
+- fallback dummy data if API fails
+- optimized rendering
+- reusable components
+- clean TypeScript
+
+========================
+11. DEPLOYMENT READY
+========================
+
+Ensure:
+- works perfectly on Replit deployment
+- production-ready structure
+- fast loading
+- optimized animations
+- no console errors
+
+========================
+12. TECH STACK
+========================
+
+Use:
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Leaflet
+- Recharts
+
+========================
+13. API
+========================
+
+Use OpenWeatherMap API.
+
+API KEY:
+PASTE_YOUR_API_KEY_HERE
+
+========================
+FINAL RESULT
+========================
+
+The final application should feel like a real-world premium AI weather intelligence platform for India with:
+- dense useful data,
+- beautiful animations,
+- interactive maps,
+- futuristic UI,
+- live AQI,
+- professional dashboards,
+- compact layouts,
+- and smooth user experience.

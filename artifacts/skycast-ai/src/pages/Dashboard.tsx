@@ -15,6 +15,7 @@ import { WorldWeather } from "../components/weather/WorldWeather";
 import { SettingsPanel } from "../components/weather/SettingsPanel";
 import { WeatherComparison } from "../components/weather/WeatherComparison";
 import { MumbaiZoneMonitor } from "../components/weather/MumbaiZoneMonitor";
+import { IndiaCitiesMonitor } from "../components/weather/IndiaCitiesMonitor";
 import { useWeather } from "../hooks/useWeather";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
@@ -126,6 +127,12 @@ export default function Dashboard() {
               {activeSection === "mumbai" && (
                 <motion.div key="mumbai" variants={containerVariants} initial="hidden" animate="visible" exit="exit">
                   <MumbaiZoneMonitor unit={unit} />
+                </motion.div>
+              )}
+
+              {activeSection === "india" && (
+                <motion.div key="india" variants={containerVariants} initial="hidden" animate="visible" exit="exit">
+                  <IndiaCitiesMonitor unit={unit} />
                 </motion.div>
               )}
 
