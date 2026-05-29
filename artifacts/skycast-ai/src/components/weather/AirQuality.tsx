@@ -2,10 +2,13 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AirPollution } from "../../types/weather";
 import { getAqiInfo, pm25ToAqi, formatAqi3 } from "../../lib/weatherUtils";
-import { TrendingUp, TrendingDown, Minus, Heart, Wind, Activity, Shield } from "lucide-react";
+import { TrendingUp, TrendingDown, Minus, Heart, Wind, Activity, Shield, Radio, AlertCircle } from "lucide-react";
+import { DataSource } from "../../lib/weatherApi";
 
 interface AirQualityProps {
   data: AirPollution | null;
+  dataSource?: DataSource;
+  lastRefreshed?: Date | null;
 }
 
 const POLLUTANTS = [
@@ -42,10 +45,19 @@ const HEALTH_ACTIVITIES = [
   { icon: "🏥", label: "Asthma Risk",aqiOk: 2 },
 ];
 
-export function AirQuality({ data }: AirQualityProps) {
+export function AirQuality({ data, dataSource = "unavailable", lastRefreshed }: AirQualityProps) {
   const [activeTab, setActiveTab] = useState<"overview" | "pollutants" | "health">("overview");
 
-  if (!data || !data.list.length) return null;
+  if (!data || !data.list.length) {
+    return (
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+        className="bg-card border border-border/50 rounded-3xl p-6 h-full flex flex-col items-center justify-center gap-2 min-h-[160px]">
+        <AlertCircle size={28} className="text-muted-foreground" />
+        <p className="font-semibold text-sm text-muted-foreground">AQI data unavailable</p>
+        <p className="text-[10px] text-muted-foreground/50">Live air quality data could not be retrieved</p>
+      </motion.div>
+    );
+  }
 
   const aqiValue    = data.list[0].main.aqi;
   const components  = data.list[0].components;
@@ -68,7 +80,7 @@ export function AirQuality({ data }: AirQualityProps) {
       className="bg-card border border-border/50 rounded-3xl p-6 h-full"
     >
       {/* Header */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-2">
         <h3 className="text-xl font-bold">Air Quality Index</h3>
         <div className="flex items-center gap-3">
           <div className={`flex items-center gap-1 text-xs font-semibold ${trend.color}`}>
@@ -80,6 +92,21 @@ export function AirQuality({ data }: AirQualityProps) {
             {info.label}
           </span>
         </div>
+      </div>
+      {/* Source + last updated */}
+      <div className="flex items-center gap-3 mb-4 text-[10px] text-muted-foreground/60">
+        <span className={`flex items-center gap-1 font-semibold ${
+          dataSource === "owm" ? "text-green-400" : dataSource === "open-meteo" ? "text-yellow-400" : "text-red-400"
+        }`}>
+          <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${
+            dataSource === "owm" ? "bg-green-400" : dataSource === "open-meteo" ? "bg-yellow-400" : "bg-red-400"
+          }`} />
+          <Radio size={8} />
+          {dataSource === "owm" ? "OpenWeatherMap" : dataSource === "open-meteo" ? "Open-Meteo" : "Live data unavailable"}
+        </span>
+        <span>·</span>
+        <span>PM2.5 → US EPA AQI formula</span>
+        {lastRefreshed && <><span>·</span><span>Updated {lastRefreshed.toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit"})}</span></>}
       </div>
 
       {/* Tabs */}

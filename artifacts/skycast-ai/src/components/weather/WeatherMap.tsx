@@ -62,39 +62,21 @@ interface CityLive {
   aqi: AirPollution | null;
 }
 
-// ── Fetch ─────────────────────────────────────────────────────────────────────
-async function fetchCityLive(c: { name: string; lat: number; lon: number }, idx: number): Promise<CityLive> {
-  try {
-    const [wRes, aRes] = await Promise.all([
-      fetch(`${BASE}/data/2.5/weather?lat=${c.lat}&lon=${c.lon}&appid=${API_KEY}&units=metric`),
-      fetch(`${BASE}/data/2.5/air_pollution?lat=${c.lat}&lon=${c.lon}&appid=${API_KEY}`),
-    ]);
-    if (!wRes.ok || !aRes.ok) throw new Error("api");
-    const [weather, aqi] = await Promise.all([wRes.json(), aRes.json()]);
-    weather.name = c.name;
-    return { ...c, weather, aqi };
-  } catch {
-    const temps = [30, 35, 26, 32, 28, 33, 29, 37, 34, 30, 10, 27];
-    const aqis  = [2,  4,  2,  3,  3,  3,  2,  3,  3,  3,  1,  2];
-    const t = temps[idx % temps.length];
-    return {
-      ...c,
-      weather: {
-        coord: { lat: c.lat, lon: c.lon },
-        weather: [{ id: 741, main: "Haze", description: "haze", icon: "50d" }],
-        base: "stations",
-        main: { temp: t, feels_like: t+2, temp_min: t-3, temp_max: t+4, pressure: 1008, humidity: 65+idx },
-        visibility: 4000+idx*300, wind: { speed: 3+idx%6, deg: 180+idx*20 },
-        clouds: { all: 40+idx*5 }, dt: Math.floor(Date.now()/1000),
-        sys: { country: "IN", sunrise: 1716340000, sunset: 1716388000 },
-        timezone: 19800, id: 1100000+idx, name: c.name, cod: 200,
-      },
-      aqi: {
-        coord: { lat: c.lat, lon: c.lon },
-        list: [{ dt: Math.floor(Date.now()/1000), main: { aqi: aqis[idx%aqis.length] }, components: { co: 200, no: 3, no2: 20+idx*3, o3: 45, so2: 7, pm2_5: 15+idx*3, pm10: 28+idx*3, nh3: 4 } }],
-      },
-    };
+// ── Fetch (real data only — no fake fallbacks) ────────────────────────────────
+async function fetchCityLive(c: { name: string; lat: number; lon: number }): Promise<CityLive> {
+  const [wRes, aRes] = await Promise.allSettled([
+    fetch(`${BASE}/data/2.5/weather?lat=${c.lat}&lon=${c.lon}&appid=${API_KEY}&units=metric`, { signal: AbortSignal.timeout(8000) }),
+    fetch(`${BASE}/data/2.5/air_pollution?lat=${c.lat}&lon=${c.lon}&appid=${API_KEY}`, { signal: AbortSignal.timeout(8000) }),
+  ]);
+  let weather: CurrentWeather | null = null;
+  let aqi: AirPollution | null = null;
+  if (wRes.status === "fulfilled" && wRes.value.ok) {
+    try { weather = await wRes.value.json(); if (weather) weather.name = c.name; } catch { weather = null; }
   }
+  if (aRes.status === "fulfilled" && aRes.value.ok) {
+    try { aqi = await aRes.value.json(); } catch { aqi = null; }
+  }
+  return { ...c, weather, aqi };
 }
 
 // ── DivIcon factories ─────────────────────────────────────────────────────────
@@ -344,7 +326,7 @@ export function WeatherMap({
   // Load India cities on mount
   const loadIndia = useCallback(async () => {
     setCitiesLoading(true);
-    const res = await Promise.allSettled(INDIA_CITIES.map((c, i) => fetchCityLive(c, i)));
+    const res = await Promise.allSettled(INDIA_CITIES.map(c => fetchCityLive(c)));
     setIndiaCities(INDIA_CITIES.map((c, i) => {
       const r = res[i];
       return r.status === "fulfilled" ? r.value : { ...c, weather: null, aqi: null };
@@ -358,7 +340,7 @@ export function WeatherMap({
   // Load Mumbai zones
   const loadMumbai = useCallback(async () => {
     setMumLoading(true);
-    const res = await Promise.allSettled(MUMBAI_ZONES.map((z, i) => fetchCityLive(z, i)));
+    const res = await Promise.allSettled(MUMBAI_ZONES.map(z => fetchCityLive(z)));
     setMumZones(MUMBAI_ZONES.map((z, i) => {
       const r = res[i]; return r.status === "fulfilled" ? r.value : { ...z, weather: null, aqi: null };
     }));

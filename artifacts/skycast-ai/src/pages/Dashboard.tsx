@@ -21,7 +21,7 @@ import { useWeather } from "../hooks/useWeather";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 export default function Dashboard() {
-  const { city, setCity, unit, setUnit, current, forecast, aqi, loading } = useWeather("London");
+  const { city, setCity, unit, setUnit, current, forecast, aqi, loading, dataSource, apiStatus, lastRefreshed, locateUser } = useWeather("Mumbai");
   const [activeSection, setActiveSection] = useState<Section>("dashboard");
   const [initialLoading, setInitialLoading] = useState(true);
 
@@ -56,12 +56,12 @@ export default function Dashboard() {
             <AnimatePresence mode="wait">
               {activeSection === "dashboard" && (
                 <motion.div key="dashboard" variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="space-y-6">
-                  <CurrentWeather data={current} unit={unit} />
+                  <CurrentWeather data={current} unit={unit} dataSource={dataSource} apiStatus={apiStatus} lastRefreshed={lastRefreshed} onRefresh={() => locateUser()} />
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div className="col-span-1 lg:col-span-2 space-y-6">
                       <HourlyForecast data={forecast} unit={unit} />
                       <WeatherCharts data={forecast} unit={unit} />
-                      <AirQuality data={aqi} />
+                      <AirQuality data={aqi} dataSource={dataSource} lastRefreshed={lastRefreshed} />
                     </div>
                     <div className="col-span-1 space-y-6">
                       <WeeklyForecast data={forecast} unit={unit} />
@@ -76,7 +76,7 @@ export default function Dashboard() {
               {activeSection === "forecast" && (
                 <motion.div key="forecast" variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="space-y-6">
                   <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground to-muted-foreground">Extended Forecast</h2>
-                  <CurrentWeather data={current} unit={unit} />
+                  <CurrentWeather data={current} unit={unit} dataSource={dataSource} apiStatus={apiStatus} lastRefreshed={lastRefreshed} />
                   <HourlyForecast data={forecast} unit={unit} />
                   <WeeklyForecast data={forecast} unit={unit} />
                   <WeatherCharts data={forecast} unit={unit} />

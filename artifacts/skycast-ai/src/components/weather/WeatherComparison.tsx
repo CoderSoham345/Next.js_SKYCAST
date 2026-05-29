@@ -185,6 +185,7 @@ export function WeatherComparison({ unit }: WeatherComparisonProps) {
     setter(prev => ({ ...prev, name, loading: true, error: null }));
     try {
       const current = await fetchWeather(name);
+      if (!current) throw new Error("No data");
       const [forecast, aqi] = await Promise.all([
         fetchForecast(name),
         fetchAirQuality(current.coord.lat, current.coord.lon),
