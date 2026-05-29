@@ -94,10 +94,13 @@ export default function Dashboard() {
                 <motion.div key="map" variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="space-y-6">
                   <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground to-muted-foreground">Interactive Weather Map</h2>
                   <WeatherMap
-                    lat={current?.coord.lat ?? 51.5}
-                    lon={current?.coord.lon ?? -0.1}
-                    city={current?.name ?? "London"}
+                    lat={current?.coord.lat ?? 20.5}
+                    lon={current?.coord.lon ?? 78.9}
+                    city={current?.name ?? "India"}
                     apiKey={apiKey}
+                    unit={unit}
+                    windDeg={current?.wind.deg ?? 220}
+                    windSpeed={current?.wind.speed ?? 5}
                   />
                 </motion.div>
               )}
