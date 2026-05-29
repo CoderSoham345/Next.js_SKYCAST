@@ -16,6 +16,7 @@ import { SettingsPanel } from "../components/weather/SettingsPanel";
 import { WeatherComparison } from "../components/weather/WeatherComparison";
 import { MumbaiZoneMonitor } from "../components/weather/MumbaiZoneMonitor";
 import { IndiaCitiesMonitor } from "../components/weather/IndiaCitiesMonitor";
+import { IndiaRankings } from "../components/weather/IndiaRankings";
 import { useWeather } from "../hooks/useWeather";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
@@ -65,6 +66,7 @@ export default function Dashboard() {
                     <div className="col-span-1 space-y-6">
                       <WeeklyForecast data={forecast} unit={unit} />
                       <AIInsights data={current} aqi={aqi} unit={unit} />
+                      <IndiaRankings unit={unit} />
                       <WorldWeather unit={unit} />
                     </div>
                   </div>

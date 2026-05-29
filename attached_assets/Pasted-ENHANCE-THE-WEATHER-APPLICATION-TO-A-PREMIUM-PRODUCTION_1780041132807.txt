@@ -1,0 +1,96 @@
+ENHANCE THE WEATHER APPLICATION TO A PREMIUM PRODUCTION-READY PLATFORM.
+
+AQI REQUIREMENTS:
+- Always display AQI as a 3-digit value (example: 042, 108, 275).
+- Use color-coded AQI badges:
+  Green (Good)
+  Yellow (Moderate)
+  Orange (Poor)
+  Red (Unhealthy)
+  Purple (Very Unhealthy)
+- Show AQI trend (↑ improving / ↓ worsening).
+- Display health recommendations based on AQI.
+
+INDIA-WIDE COVERAGE:
+- Not only major cities.
+- When a user searches Mumbai, Delhi, Pune, Bengaluru, Kolkata, Chennai, Hyderabad, etc., automatically fetch and display nearby zones/suburbs.
+- Example for Mumbai:
+  Dadar, Parel, Byculla, Kurla, Matunga, Mulund, Bhandup, Powai, Ghatkopar, Andheri.
+- Show AQI and Temperature cards for each locality.
+- Display top 10 nearby localities in a responsive grid.
+
+ADVANCED WEATHER FEATURES:
+- Live weather updates every 5 minutes.
+- Hourly forecast (24 hours).
+- 7-day forecast.
+- Sunrise and sunset.
+- UV Index.
+- Visibility.
+- Pressure.
+- Humidity.
+- Wind speed and direction.
+- Feels-like temperature.
+- Chance of rain percentage.
+
+INTERACTIVE MAP:
+- Full-screen map.
+- Live geolocation support.
+- User location marker.
+- Weather layer.
+- AQI layer.
+- Temperature heatmap.
+- Rain radar overlay.
+- Click any city on map to view weather.
+
+NEWS SECTION:
+- Real weather and climate news.
+- Disaster alerts.
+- Cyclone warnings.
+- Flood warnings.
+- Heatwave alerts.
+- Weather headlines by state.
+- Searchable news feed.
+
+PREMIUM UI/UX:
+- Glassmorphism design.
+- Animated weather backgrounds.
+- Day/Night theme switching.
+- Lightning animation during storms.
+- Rain particle effects.
+- Snow particle effects.
+- Smooth Framer Motion animations.
+- Professional dashboard layout.
+- Zero blank white spaces.
+- Mobile responsive.
+
+AI FEATURES:
+- AI Weather Summary.
+- AI Travel Recommendations.
+- AI Clothing Suggestions.
+- AI Health Advice based on AQI and temperature.
+- AI Agriculture Insights.
+- AI-generated weather alerts.
+
+DASHBOARD:
+- Top 10 hottest cities in India.
+- Top 10 coolest cities in India.
+- Top 10 highest AQI cities.
+- Top 10 cleanest air cities.
+- Live ranking cards.
+
+SETTINGS:
+- Celsius/Fahrenheit toggle.
+- Light/Dark mode.
+- Language selector.
+- Save favorite cities.
+- Notification preferences.
+
+TECHNICAL:
+- Production-ready code.
+- No runtime errors.
+- Error boundaries.
+- Loading skeletons.
+- API fallback handling.
+- TypeScript strict mode.
+- Optimized performance.
+- Clean component architecture.
